@@ -1,0 +1,12 @@
+{
+  "services": {
+    "web": {
+      "plan": "free",
+      "startCommand": "npm install && npm run build && node server/server.cjs",
+      "environmentVariables": {
+        "NODE_ENV": "production",
+        "PORT": "3001"
+      }
+    }
+  }
+}

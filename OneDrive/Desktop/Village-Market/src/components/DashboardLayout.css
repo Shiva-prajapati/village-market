@@ -1,0 +1,100 @@
+.dashboard-layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--background-color);
+}
+
+.dashboard-sidebar {
+    width: 280px;
+    background-color: var(--surface-color);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    z-index: 20;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.dashboard-sidebar-header {
+    margin-bottom: 2rem;
+}
+
+.dashboard-main {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-content-wrapper {
+    padding: 2rem;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 1600px;
+    /* Prevent it from being too wide on huge screens */
+}
+
+/* Scrollbar styling for cleanliness */
+.dashboard-main::-webkit-scrollbar,
+.dashboard-sidebar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.dashboard-main::-webkit-scrollbar-track,
+.dashboard-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.dashboard-main::-webkit-scrollbar-thumb,
+.dashboard-sidebar::-webkit-scrollbar-thumb {
+    background-color: #CBD5E1;
+    border-radius: 4px;
+}
+
+.dashboard-main::-webkit-scrollbar-thumb:hover,
+.dashboard-sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #94A3B8;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .dashboard-layout {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+        height: auto;
+        max-height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        overflow-y: visible;
+        /* Don't scroll sidebar on mobile separately usually */
+    }
+
+    .dashboard-sidebar-header {
+        margin-bottom: 0;
+    }
+
+    .dashboard-main {
+        flex: 1;
+    }
+
+    .dashboard-content-wrapper {
+        padding: 1rem;
+    }
+}
